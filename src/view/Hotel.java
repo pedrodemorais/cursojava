@@ -11,43 +11,46 @@ public class Hotel {
 		
 		Scanner input = new Scanner(System.in);
 		
-		Aluguel vect [] = new Aluguel[10];
-		
 		String nomeHospede;
 		String emailHospede;
 		int numeroQuarto;
-		
-		System.out.println("Quantos estudantes irão hospedar?");
-		int numEstudantes=input.nextInt();
-		
-		for(int i=0; i< numEstudantes; i++ ){
-			
-			input.nextLine();
-			System.out.println("Nome: ");
-			nomeHospede = input.nextLine();
-			System.out.println("e-mail: ");
-			emailHospede = input.nextLine();
-			System.out.println("Quarto: ");
-			numeroQuarto = input.nextInt();
-			
-			vect[numeroQuarto]= new Aluguel(nomeHospede, emailHospede, numeroQuarto);
-			
-			
-		}
+		int numEstudantes=0;
 		
 		
-		for(int i=0; i<vect.length; i++) {
+			System.out.println("Quantos estudantes irão hospedar?");
+			 numEstudantes=input.nextInt();
+			 Aluguel vect [] = new Aluguel[10];
+			 
+			 if(numEstudantes > 10) {
+				 System.out.println("Não há quartos Disponíveis");
+				 
+			 }else {
 			
-			if(vect[i]!= null) {
-				System.out.println(vect[i]);
+			for(int i=1; i<= numEstudantes; i++ ){
 				
-				
+				input.nextLine();
+				System.out.println("Nome: ");
+				nomeHospede = input.nextLine();
+				System.out.println("e-mail: ");
+				emailHospede = input.nextLine();
+				System.out.println("Quarto: ");
+				numeroQuarto = input.nextInt();
+				vect[numeroQuarto]= new Aluguel(nomeHospede, emailHospede, numeroQuarto);
 				
 			}
 			
 		}
 		
-
+		for(int i=0; i<vect.length; i++) {
+			
+			if(vect[i]!= null) {
+				System.out.println(vect[i]);
+			}
+		}
+		
+		}
 	}
+	
 
-}
+	
+		
