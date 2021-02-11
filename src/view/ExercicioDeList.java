@@ -19,6 +19,7 @@ public class ExercicioDeList {
 
 		String nameEmployee = "";
 		Employee employee = null;
+		Employee emp = null;
 
 		double salaryEmployee = 0.0;
 
@@ -62,12 +63,21 @@ public class ExercicioDeList {
 		}
 
 		System.out.println("Digite o código do Funcionário que receberá aumento: ");
-		idEmployee = input.nextInt();
-
-		System.out.println("Qual o pecentual de aumento do salario do funcionário?");
-		percentualAAumentar = input.nextFloat();
+		int idSalary = input.nextInt();
 		
-		employee.aumentarSalario(percentualAAumentar);
+		emp = list.stream().filter(x -> x.getIdEmployee() == idSalary).findFirst().orElse(null);
+		if(emp == null) {
+			System.out.println("Código Inválido!");
+		}else { 
+			System.out.println("");
+		
+			System.out.println("Qual o pecentual de aumento do salario do funcionário?");
+			percentualAAumentar = input.nextFloat();
+			employee.aumentarSalario(percentualAAumentar);
+			
+		
+		}
+
 		
 		for(Employee x: list) {
 			System.out.println(x);
