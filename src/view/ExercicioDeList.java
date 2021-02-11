@@ -69,20 +69,20 @@ public class ExercicioDeList {
 		if(emp == null) {
 			System.out.println("Código Inválido!");
 		}else { 
-<<<<<<< HEAD
+
 			System.out.println("Funcionário Encontrado!");
 		
 			System.out.println("Qual o pecentual de aumento do salario do funcionário?");
 			percentualAAumentar = input.nextFloat();
 			emp.aumentarSalario(percentualAAumentar);;
 			//employee.aumentarSalario(percentualAAumentar);
-=======
+
 			System.out.println("");
 		
 			System.out.println("Qual o pecentual de aumento do salario do funcionário?");
 			percentualAAumentar = input.nextFloat();
 			employee.aumentarSalario(percentualAAumentar);
->>>>>>> 3fd7a5da1bcaa3ea6b4b48e48d713bb00b701542
+
 			
 		
 		}
