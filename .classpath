@@ -7,5 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="uri"/>
+	<classpathentry kind="src" path="enum"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
