@@ -2,7 +2,7 @@ package view;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entitie.Product;
+import entitie.Producto;
 
 public class Array2 {
 
@@ -16,7 +16,7 @@ public class Array2 {
 		int n = input.nextInt();
 		double valueTotal=0;
 
-		Product[] vect = new Product[n];
+		Producto[] vect = new Producto[n];
 
 		for (int i = 0; i < vect.length; i++) {
 			
@@ -25,7 +25,7 @@ public class Array2 {
 			String nameProduct = input.nextLine();
 			System.out.println("Preço do Produto: ");
 			double priceProduct = input.nextDouble();
-			vect[i] = new Product(nameProduct, priceProduct);
+			vect[i] = new Producto(nameProduct, priceProduct);
 			valueTotal += vect[i].getPriceProduct() ;
 			
 		}

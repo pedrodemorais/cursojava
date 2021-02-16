@@ -1,10 +1,10 @@
 package entitie;
 
-public class Product {
+public class Producto {
 	private String nameProduct;
 	private double priceProduct;
 
-	public Product(String nameProduct, double priceProduct) {
+	public Producto(String nameProduct, double priceProduct) {
 		super();
 		this.nameProduct = nameProduct;
 		this.priceProduct = priceProduct;
