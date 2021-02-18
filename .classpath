@@ -11,5 +11,6 @@
 	<classpathentry kind="src" path="composicao"/>
 	<classpathentry kind="src" path="date"/>
 	<classpathentry kind="src" path="composicao_one"/>
+	<classpathentry kind="src" path="composicaodois"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
