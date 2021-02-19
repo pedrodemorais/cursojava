@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import entitie.enums.WorkerLevel;
@@ -9,6 +10,9 @@ public class Worker {
 	private String name;
 	private WorkerLevel level;
 	private Double baseSalary;
+	
+	
+	
 	Department department;
 	private List<HourContract> contracts = new ArrayList<HourContract>();
 	
@@ -68,8 +72,27 @@ public class Worker {
 		
 	}
 	
-	public Double income(Integer year, Integer month) {
-		return 2.0;
+	public Double income(Integer month, Integer year) {
+
+		double sum = baseSalary;
+		
+		Calendar cal = Calendar.getInstance();
+		
+		for(HourContract c: contracts) {
+			cal.setTime(c.getDate());
+			int c_month = 1 + cal.get(Calendar.MONTH);
+			int c_year = cal.get(Calendar.YEAR);
+			
+			if(c_month == month && c_year == year) {
+				//System.out.println("Entrou no if");
+				System.out.println(c_month+"/"+c_year);
+				sum += c.totalValue();
+				
+			}
+			
+		}
+
+		return sum;
 		
 	}
 
