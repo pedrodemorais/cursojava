@@ -13,8 +13,7 @@ public class ExercicioDeList {
 
 		Locale.setDefault(Locale.US);
 		Scanner input = new Scanner(System.in);
-		
-		
+
 		List<Employee> list = new ArrayList<>();
 
 		String nameEmployee = "";
@@ -22,13 +21,9 @@ public class ExercicioDeList {
 		Employee emp = null;
 
 		double salaryEmployee = 0.0;
-
 		int idEmployee = 0;
-
 		float percentualAAumentar = 0f;
-		
 
-		
 		System.out.println("Quantos Funcionários serão cadastrados?");
 		int qtdFuncionarios = input.nextInt();
 
@@ -38,11 +33,11 @@ public class ExercicioDeList {
 
 			System.out.println("Código do Funcionário: ");
 			idEmployee = input.nextInt();
-			
-			while(hasid(list, idEmployee)) {
+
+			while (hasid(list, idEmployee)) {
 				System.out.println("Já existe um Funcionário com esse código, digite novamente: ");
 				idEmployee = input.nextInt();
-				
+
 			}
 
 			System.out.println("Nome Funcionário: ");
@@ -64,43 +59,40 @@ public class ExercicioDeList {
 
 		System.out.println("Digite o código do Funcionário que receberá aumento: ");
 		int idSalary = input.nextInt();
-		
+
 		emp = list.stream().filter(x -> x.getIdEmployee() == idSalary).findFirst().orElse(null);
-		if(emp == null) {
+		if (emp == null) {
 			System.out.println("Código Inválido!");
-		}else { 
+		} else {
 
 			System.out.println("Funcionário Encontrado!");
-		
+
 			System.out.println("Qual o pecentual de aumento do salario do funcionário?");
 			percentualAAumentar = input.nextFloat();
-			emp.aumentarSalario(percentualAAumentar);;
-			//employee.aumentarSalario(percentualAAumentar);
+			emp.aumentarSalario(percentualAAumentar);
+			;
+			// employee.aumentarSalario(percentualAAumentar);
 
 			System.out.println("");
-		
+
 			System.out.println("Qual o pecentual de aumento do salario do funcionário?");
 			percentualAAumentar = input.nextFloat();
 			employee.aumentarSalario(percentualAAumentar);
 
-			
-		
 		}
 
-		
-		for(Employee x: list) {
+		for (Employee x : list) {
 			System.out.println(x);
 		}
 
-		
 		input.close();
 
 	}
-	
+
 	static boolean hasid(List<Employee> list, int id) {
-		Employee emp = list.stream().filter(x -> x.getIdEmployee()==id).findFirst().orElse(null);
-		
+		Employee emp = list.stream().filter(x -> x.getIdEmployee() == id).findFirst().orElse(null);
+
 		return emp != null;
-		
+
 	}
 }
