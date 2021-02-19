@@ -11,8 +11,10 @@ public class Order {
 	
 		private Date moment;
 		private OrderStatus status;
-		private Client client = new Client();
-		private List <OrderItem> items = new ArrayList<>();
+		
+	    private Client client;
+		
+	    private List <OrderItem> items = new ArrayList<>();
 		
 		public Order() {
 			
@@ -59,7 +61,24 @@ public class Order {
 	}
 	
 	public double total() {
-		return 2l;
+		Double sum =0.0;
+		for(OrderItem x: items) {
+			sum+=x.subTotal();
+			
+		}
+		return sum;
+	}
+	
+	public void mostrarItens() {
+		
+		for (OrderItem x: items) {
+			System.out.println(x.getProduct().getName()+
+					", R$ "+x.getProduct().getPrice()+
+					" Quantity: "+x.getQuantity()+
+					" Subtotal: "+x.subTotal() );
+			
+		}
+		
 	}
 
 	@Override

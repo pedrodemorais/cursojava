@@ -1,9 +1,9 @@
 package entitie;
 
 public class Product {
+	
 	private String name;
 	private Double price;
-	private Double subTotal;
 	
 	public Product() {
 		

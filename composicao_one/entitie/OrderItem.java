@@ -3,16 +3,18 @@ package entitie;
 public class OrderItem {
 	private Integer quantity;
 	private double price;
-	private Product product = new Product();
+	private Product product;
 	
 	
 	public OrderItem() {
 		
 	}
 	
-	public OrderItem(Integer quantity, double price) {
+	public OrderItem(Integer quantity, double price, Product product) {
 		this.quantity = quantity;
 		this.price = price;
+		this.product = product;
+		
 	}
 	
 	public Integer getQuantity() {
@@ -44,5 +46,12 @@ public class OrderItem {
 		return subTotal +=price;
 		
 	}
+
+	@Override
+	public String toString() {
+		return "OrderItem [quantity=" + quantity + ", price=" + price + ", product=" + product + "]";
+	}
+	
+	
 
 }
