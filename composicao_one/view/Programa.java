@@ -30,6 +30,7 @@ public class Programa {
 		OrderItem orderItem = new OrderItem(2, 20.00);
 		
 		Order order = new Order(date, orderStatus, cli );
+		System.out.println("Novo Exercicio");
 		
 		
 		
